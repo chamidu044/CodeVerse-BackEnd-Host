@@ -1,6 +1,6 @@
 import pytest
 import json
-from server import app
+from app import app
 from datetime import datetime, timezone
 
 @pytest.fixture
