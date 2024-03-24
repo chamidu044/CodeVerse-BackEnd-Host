@@ -247,4 +247,4 @@ def get_bot_response3():
     return response
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',debug=False,port=8000)
+    app.run(debug=False,port=8000)
