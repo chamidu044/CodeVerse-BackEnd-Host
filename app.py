@@ -97,12 +97,12 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('/')
+@app.route('https://flask-backend-codeverse.azurewebsites.net/')
 def main():
     return 'Homepage'
 
 
-@app.route('/upload', methods=['POST'])
+@app.route('https://flask-backend-codeverse.azurewebsites.net/upload', methods=['POST'])
 def upload_file():
     # open('fullCode.json', 'w').close()
     # check if the post request has the file part
@@ -208,7 +208,7 @@ def is_json_null(json_file_path):
 
 
 
-@app.route('/business',methods=['GET'])
+@app.route('https://flask-backend-codeverse.azurewebsites.net/business',methods=['GET'])
 def get_bot_response2():
     userInput = get_user_input()
     json_file_path = "data2.json"  # Replace with your JSON file path
@@ -226,7 +226,7 @@ def get_bot_response2():
 
 
 
-@app.route('/userinput',methods=['POST'])
+@app.route('https://flask-backend-codeverse.azurewebsites.net/userinput',methods=['POST'])
 def user_input():
     data = request.json.get('data')  # Extracting JSON data from the request
     if data:
@@ -239,7 +239,7 @@ def user_input():
 
 
 
-@app.route("/get2")
+@app.route("https://flask-backend-codeverse.azurewebsites.net/get2")
 def get_bot_response3():
     userText = request.args.get('msg')
     response = get_completion2(userText)
