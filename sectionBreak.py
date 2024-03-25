@@ -13,44 +13,44 @@ def sectionBreak(img):
     from PIL import Image ,ImageDraw,ImageFont
     import cv2
     #Chack fullcode hson file is null
-    # def fullcodeFile():
-    #     try:
-    #         with open("fullCode.json", 'r') as f:
-    #             data = f.read()
-    #             if not data.strip():  # Check if the file is empty
-    #                 return True  # Return True if file is empty
-    #     except JSONDecodeError as e:
-    #         if e.msg == "Expecting value" and e.doc == "":
-    #             return True  # Return True if JSONDecodeError due to empty file
-    #
-    # # Check if csscode JSON file is empty or does not exist
-    # def csscodeFile():
-    #     try:
-    #         with open("cssCode.json", 'r') as f:
-    #             data = f.read()
-    #             if not data.strip():  # Check if the file is empty
-    #                 return True  # Return True if file is empty
-    #     except JSONDecodeError as e:
-    #         if e.msg == "Expecting value" and e.doc == "":
-    #             return True  # Return True if JSONDecodeError due to empty file
-    #
-    # # Check if alltxt file is empty
-    # def alltxt():
-    #     return os.stat("all.txt").st_size == 0  # Return True if file size is 0
-    #
-    # Fullcode = fullcodeFile()  # Check if fullCode.json is empty
-    # Csscode = csscodeFile()  # Check if cssCode.json is empty
-    # Alltxt = alltxt()  # Check if all.txt is empty
-    #
-    # # If any of the files are not empty, clear their contents
-    # if not (Fullcode and Csscode and Alltxt):
-    #     # Clear contents of the files
-    #     open('fullCode.json', 'w').close()
-    #     open('cssCode.json', 'w').close()
-    #     open('all.txt', 'w').close()  # Close all.txt
-    #
-    #
-    # # #import trained data set
+    def fullcodeFile():
+        try:
+            with open("fullCode.json", 'r') as f:
+                data = f.read()
+                if not data.strip():  # Check if the file is empty
+                    return True  # Return True if file is empty
+        except JSONDecodeError as e:
+            if e.msg == "Expecting value" and e.doc == "":
+                return True  # Return True if JSONDecodeError due to empty file
+
+    # Check if csscode JSON file is empty or does not exist
+    def csscodeFile():
+        try:
+            with open("cssCode.json", 'r') as f:
+                data = f.read()
+                if not data.strip():  # Check if the file is empty
+                    return True  # Return True if file is empty
+        except JSONDecodeError as e:
+            if e.msg == "Expecting value" and e.doc == "":
+                return True  # Return True if JSONDecodeError due to empty file
+
+    # Check if alltxt file is empty
+    def alltxt():
+        return os.stat("all.txt").st_size == 0  # Return True if file size is 0
+
+    Fullcode = fullcodeFile()  # Check if fullCode.json is empty
+    Csscode = csscodeFile()  # Check if cssCode.json is empty
+    Alltxt = alltxt()  # Check if all.txt is empty
+
+    # If any of the files are not empty, clear their contents
+    if not (Fullcode and Csscode and Alltxt):
+        # Clear contents of the files
+        open('fullCode.json', 'w').close()
+        open('cssCode.json', 'w').close()
+        open('all.txt', 'w').close()  # Close all.txt
+
+
+    # #import trained data set
     from roboflow import Roboflow
     rf = Roboflow(api_key="m9FUSKdsX7mKElmIOqn8")
     project = rf.workspace("university-of-westminster-snot2").project("object-detection-meopq")
